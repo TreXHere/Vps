@@ -1,17 +1,5 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
-    "ghcr.io/devcontainers/features/ssh-server:1": {
-      "installKeys": true
-    }
-  },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y openssh-server && sudo systemctl enable ssh && sudo systemctl start ssh && echo 'likhon:likhon' | sudo chpasswd && echo 'likhon ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/likhon",
-  "runArgs": [
-    "--privileged"
-  ],
-  "mounts": [
-    "source=${localWorkspaceFolder}/.ssh,target=/root/.ssh,type=bind"
-  ],
-  "remoteUser": "root",
-  "postStartCommand": "echo 'SSH setup completed. You can now access this container via SSH.'"
+  }
 }
